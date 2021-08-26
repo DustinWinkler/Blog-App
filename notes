@@ -1,0 +1,8 @@
+------------ API ----------------
+  Routes 
+    posts
+      open{ get }, protected { post put delete }
+    users
+      login route, admin status...
+    comments
+      open { get }, protected { post put delete }
