@@ -176,10 +176,8 @@ router.put('/users/:userid', (req, res, next) => {
     else {
       const userr = await User.findById(req.params.userid)
       userr.username = req.body.username
-      console.log('update ', req.body)
       if (req.body.password) {
         const passwordSame = await bcrypt.compare(req.body.password, user.password)
-        console.log('passwordSame ', passwordSame)
   
         if (!passwordSame) {
           userr.password = await bcrypt.hash(req.body.password, 10)
@@ -202,7 +200,6 @@ router.get('/getuserdetails', (req, res, next) => {
         id: user._id,
         isAdmin: user.isAdmin
       }
-      console.log(details, user);
       res.json(details)
     }
     
