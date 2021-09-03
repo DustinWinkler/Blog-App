@@ -17,5 +17,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jalcyon/Blog-App/issues"
+  },
+  "dependencies": {
+    "server": "file:server"
   }
 }
