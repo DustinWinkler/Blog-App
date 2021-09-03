@@ -71,7 +71,13 @@ router.delete('/posts/:postid', (req, res, next) => {
 
 // GET ALL COMMENTS FOR POST
 router.get('/posts/:postid/comments', async (req, res) => {
-  const post = await Post.findById(req.params.postid).populate('comments')
+  const post = await Post.findById(req.params.postid).populate({
+    path: 'comments',
+    populate: {
+      path: 'author',
+      model: 'User'
+    }
+  })
   res.json(post.comments)
 })
 
@@ -187,12 +193,17 @@ router.put('/users/:userid', (req, res, next) => {
   })(req, res, next)
 })
 
-router.get('/getusername', (req, res, next) => {
+router.get('/getuserdetails', (req, res, next) => {
   passport.authenticate('jwt', {session: false}, async (err, user, info) => {
-    console.log('meme', user, req.headers)
     if (err || !user) {res.status(401).send('Auth failed')}
     else {
-      res.json({username: user.username})
+      const details = {
+        username: user.username,
+        id: user._id,
+        isAdmin: user.isAdmin
+      }
+      console.log(details, user);
+      res.json(details)
     }
     
   })(req, res, next)

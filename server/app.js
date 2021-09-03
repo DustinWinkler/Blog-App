@@ -25,7 +25,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error: '))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, '../frontend/build')));
 
 // Passport Stategy
 passport.use('signup', new localStrategy({

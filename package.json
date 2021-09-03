@@ -1,0 +1,23 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/bin/www.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+  },
+  "engines": {
+    "node": "16.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jalcyon/Blog-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jalcyon/Blog-App/issues"
+  },
+  "homepage": "https://github.com/Jalcyon/Blog-App#readme"
+}
