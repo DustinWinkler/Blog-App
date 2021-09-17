@@ -1,4 +1,7 @@
 # Blog-App
+
+[Live Preview](https://tranquil-thicket-14192.herokuapp.com/)
+
 The bones of this project are made with the MERN stack (MongoDB, Express, React, Node.js)
 
 The design aspects are made in part using TailwindCSS and Font Awesome.
